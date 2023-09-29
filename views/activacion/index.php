@@ -7,6 +7,16 @@
   <style>
     body {
       padding-top: 56px;
+      position: relative;
+      min-height: 100vh;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #f8f9fa;
     }
   </style>
   <title>Navbar con Bootstrap</title>
@@ -21,7 +31,7 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 
-      <a class="navbar-brand" href="#">Solicitudes Pendientes</a>
+      <a class="navbar-brand" href="#">Examen Final</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,27 +39,45 @@
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Lista de Usuarios
+              Usuarios Pendientes
             </a>
             <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
               <li><a class="dropdown-item" href="/examenfinalMRRF/activacion">Solicitud de Usuarios Pendientes</a></li>
               <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
-              <li><a class="dropdown-item" href="/examenfinalMRRF/desactivo">Lista de Usuarios Desactivados</a></li>
             </ul>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Habitaciones Del Hotel
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Habitaciones</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reservaciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Calendario de Reservaciones</a></li>
+            </ul>
+          </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reporte de Gráficas
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reporte de cantidad de Usuarios Activos e Inactivos</a></li>
-              <li><a class="dropdown-item" href="/examenfinalMRRF/reporte/estadistica">Reporte de cantidad de Usuarios por Rol</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
             </ul>
           </li>
         </ul>
         </div>
     <div class="d-flex">
-      <a href="/examenfinalMRRF/" class="btn btn-info me-2">Menu Principal</a>
+      <a href="/examenfinalMRRF/menuAdministrador" class="btn btn-info me-2">Menu Principal</a>
       <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar Sesión</a>
     </div>
   </div>
