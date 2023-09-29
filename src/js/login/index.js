@@ -22,54 +22,58 @@ function ver_password() {
 const login = async e => {
     e.preventDefault();
 
-    if(!validarFormulario(formLogin)){
+    if (!validarFormulario(formLogin)) {
         Toast.fire({
             icon: 'info',
             title: 'Debe llenar todos los campos'
-        })
-        return
+        });
+        return;
     }
 
     try {
-        const url = '/examenfinalMRRF/API/login'
-
+        const url = '/examenfinalMRRF/API/login';
         const body = new FormData(formLogin);
-
         const headers = new Headers();
         headers.append("X-Requested-With", "fetch");
-
         const config = {
             method: 'POST',
             headers,
             body
-        }
-
+        };
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
-        
-        const {codigo, mensaje, detalle} = data;
+
+        const { codigo, mensaje, detalle } = data;
         let icon = 'info';
-        if(codigo == 1){
-            icon = 'success'
-        }else if(codigo == 2){
-            icon = 'warning'
-        }else{
-            icon = 'error'
+
+        if (codigo == 1) {
+            icon = 'success';
+            Toast.fire({
+                title: mensaje,
+                icon
+            }).then((e) => {
+                location.href = '/examenfinalMRRF/menuAdministrador'; // Redirige al menú de administrador.
+            });
+        } else if (codigo == 2) {
+            icon = 'success'; // Puedes cambiar el icono a 'success' si lo deseas.
+            Toast.fire({
+                title: mensaje,
+                icon
+            }).then((e) => {
+                location.href = '/examenfinalMRRF/menuCliente'; // Redirige al menú de cliente.
+            });
+        } else {
+            icon = 'error';
+            Toast.fire({
+                title: mensaje,
+                icon
+            });
         }
-
-        Toast.fire({
-            title : mensaje,
-            icon
-        }).then((e)=>{
-            if(codigo === 1){
-                location.href = '/examenfinalMRRF/menu'
-            }
-        })
-
     } catch (error) {
         console.log(error);
     }
 }
+
 
 formLogin.addEventListener('submit', login );
 show_password.addEventListener('click', ver_password);

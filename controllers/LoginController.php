@@ -38,30 +38,25 @@ class LoginController {
             if (is_array($usuarioRegistrado)) {
                 $verificacion = password_verify($password, $usuarioRegistrado['usu_password']);
                 $nombre = $usuarioRegistrado['usu_nombre'];
-                $situacion = $usuarioRegistrado['usu_situacion'];
+                $rol = $usuarioRegistrado['usu_rol'];
     
                 if (!$verificacion) {
                     echo json_encode([
                         'codigo' => 2,
                         'mensaje' => 'Contraseña incorrecta'
                     ]);
-                } elseif ($situacion == 2) {
+                } elseif ($rol == 2) {
                     echo json_encode([
-                        'codigo' => 3,
+                        'codigo' => 2,
                         'mensaje' => 'Usuario pendiente de activación'
                     ]);
-                } elseif ($situacion == 3) {
-                    echo json_encode([
-                        'codigo' => 4,
-                        'mensaje' => 'Usuario desactivado'
-                    ]);
-                } elseif ($situacion == 1) {
+                } elseif ($rol == 1) {
                     session_start();
                     $_SESSION['auth_user'] = $dpi;
     
                     echo json_encode([
                         'codigo' => 1,
-                        'mensaje' => "Sesión iniciada correctamente. Bienvenido $nombre"
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido Administrador $nombre"
                     ]);
                 }
             } else {

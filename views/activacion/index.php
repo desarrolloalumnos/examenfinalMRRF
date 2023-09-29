@@ -71,13 +71,37 @@
                     </div>
                 </div>
 
-                <!-- //!Numero de Catálogo -->
+                <!-- //!Numero de DPI O Pasaporte -->
                 <div class="row mb-3">
                     <div class="col">
                         <label for="usu_dpi">Numero de DPI</label>
                         <input type="number" name="usu_dpi" id="usu_dpi" class="form-control">
                     </div>
                 </div>
+
+                <!-- //!Password -->
+<div class="row mb-3" style="display: none;">
+    <div class="col">
+        <label for="usu_password" style="display: none;">CONTRASEÑA</label>
+        <input type="password" name="usu_password" id="usu_password" class="form-control">
+    </div>
+</div>
+
+<!-- //!Email -->
+<div class="row mb-3" style="display: none;">
+    <div class="col">
+        <label for="usu_email" style="display: none;">EMAIL</label>
+        <input type="email" name="usu_email" id="usu_email" class="form-control">
+    </div>
+</div>
+
+<!-- //!telefono -->
+<div class="row mb-3" style="display: none;">
+    <div class="col">
+        <label for="usu_telefono" style="display: none;">TELEFONO</label>
+        <input type="number" name="usu_telefono" id="usu_telefono" class="form-control">
+    </div>
+</div>
 
                 <!-- //!Rol -->
                 <div class="row mb-3">

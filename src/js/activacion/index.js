@@ -31,6 +31,21 @@ const datatable = new Datatable('#tablaUsuarios', {
             data: 'usu_dpi',
         },
         {
+            title: 'CONTRASEÑA',
+            data: 'usu_password',
+            visible: false
+        },
+        {
+            title: 'EMAIL',
+            data: 'usu_email',
+            visible: true
+        },
+        {
+            title: 'TELEFONO',
+            data: 'usu_telefono',
+            visible: true
+        },
+        {
             title: 'ROL',
             data: 'rol_nombre',
             render: (data, type, row) => {
@@ -45,7 +60,7 @@ const datatable = new Datatable('#tablaUsuarios', {
             data: 'usu_id',
             searchable: false,
             orderable: false,
-            render: (data, type, row, meta) => `<button class="btn btn-warning" data-id='${data}' data-nombre='${row["usu_nombre"]}' data-dpi='${row["usu_dpi"]}'>Asignar Rol</button>`
+            render: (data, type, row, meta) => `<button class="btn btn-warning" data-id='${data}' data-nombre='${row["usu_nombre"]}'  data-dpi='${row["usu_dpi"]}'data-password='${row["usu_password"]}' data-email='${row["usu_email"]}' data-telefono='${row["usu_telefono"]}'>Asignar Rol</button>`
         },
         {
             title: 'ACTIVAR',
@@ -247,11 +262,17 @@ const traeDatos = (e) => {
     const id = button.dataset.id;
     const nombre = button.dataset.nombre;
     const dpi = button.dataset.dpi;
+    const password = button.dataset.password;
+    const telefono = button.dataset.telefono;
+    const email = button.dataset.email;
 
     //! Llenar el formulario con los datos obtenidos
     formulario.usu_id.value = id;
     formulario.usu_nombre.value = nombre;
     formulario.usu_dpi.value = dpi;
+    formulario.usu_password.value = password;
+    formulario.usu_telefono.value = telefono;
+    formulario.usu_email.value = email;
 }
 
 //!Aca esta la funcino de cancelar la accion de modificar un registro.

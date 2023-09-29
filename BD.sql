@@ -6,7 +6,16 @@ CREATE TABLE rol (
     rol_situacion SMALLINT DEFAULT 1
 );
 
-
+CREATE TABLE usuario (
+    usu_id SERIAL PRIMARY KEY,
+    usu_nombre VARCHAR(50) UNIQUE,
+    usu_dpi INTEGER UNIQUE,
+    usu_password LVARCHAR,
+    usu_email VARCHAR(255) UNIQUE,
+    usu_telefono VARCHAR(15),
+    usu_rol INTEGER REFERENCES rol(rol_id),
+    usu_situacion SMALLINT DEFAULT 2
+);
 
 CREATE TABLE habitaciones (
     habitacion_id SERIAL PRIMARY KEY,
@@ -37,21 +46,14 @@ CREATE TABLE facturas (
 );
 
 
-CREATE TABLE usuario (
-    usu_id SERIAL PRIMARY KEY,
-    usu_nombre VARCHAR(50) UNIQUE,
-    usu_dpi INTEGER UNIQUE,
-    usu_password LVARCHAR,
-    usu_email VARCHAR(255) UNIQUE,
-    usu_telefono VARCHAR(15),
-    usu_rol INTEGER REFERENCES rol(rol_id),
-    usu_situacion SMALLINT DEFAULT 2
-);
 
-insert into rol (rol_nombre ) values ('ADMINISTRADOR DE TIENDA');
-insert into rol (rol_nombre ) values ('USUARIO DE TIENDA');
+insert into rol (rol_nombre ) values ('ADMINISTRADOR');
+insert into rol (rol_nombre ) values ('TECNICO');
+insert into rol (rol_nombre ) values ('CLIENTE');
 
-insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
-('CARLOS REYES', 664052, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'reyes@gmail.com', 55237292, 1);
-insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
-('ABNER FUENTES', 623041, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'fuentes@gmail.com', 45330075, 2);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol, usu_situacion ) values 
+('CARLOS REYES', 664052, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'reyes@gmail.com', 55237292, 1, 1);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono ) values 
+('ABNER FUENTES', 623041, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'fuentes@gmail.com', 45330075);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono ) values 
+('FRANCO ALEGRIA', 123456, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'franco@gmail.com', 40383291);
