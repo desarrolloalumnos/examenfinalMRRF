@@ -61,19 +61,20 @@ public static function buscarRoles(){
         }
     }
 
-    //!Funcion Activar
     public static function activarAPI(){
         try {
             $usu_id = $_POST['usu_id'];
             $usuario = Usuario::find($usu_id);
     
-            if ($usuario->usu_rol === null || $usuario->usu_rol === '') {
+            // Verificar si el rol es "PENDIENTE"
+            if ($usuario->usu_rol === '4') {
                 echo json_encode([
-                    'mensaje' => 'No se puede activar el usuario sin un rol asignado',
+                    'mensaje' => 'No se puede activar el usuario con rol "PENDIENTE"',
                     'codigo' => 2
                 ]);
                 return;
             }
+    
     
             $usuario->usu_situacion = 1;
             $resultado = $usuario->actualizar();

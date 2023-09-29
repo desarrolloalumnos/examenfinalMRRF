@@ -14,7 +14,9 @@ $router->get('/', [AppController::class,'index']);
 
 //!Rutas para El Login
 $router->get('/', [LoginController::class,'index']);
-$router->get('/menuAdministrador', [LoginController::class,'menu']);
+$router->get('/menuAdministrador', [LoginController::class,'menuAdministrador']);
+$router->get('/menuTecnico', [LoginController::class,'menuTecnico']);
+$router->get('/menuCliente', [LoginController::class,'menuCliente']);
 $router->get('/logout', [LoginController::class,'logout']);
 $router->post('/API/login', [LoginController::class,'loginAPI']);
 

@@ -14,9 +14,25 @@ class LoginController {
         }
     }
 
-    public static function menu(Router $router){
+    public static function menuAdministrador(Router $router){
         if(isset($_SESSION['auth_user'])){
-            $router->render('menu/index', []);
+            $router->render('menus/menuAdministrador/index', []);
+        }else{
+            header('Location: /examenfinalMRRF/');
+        }
+    }
+
+    public static function menuTecnico(Router $router){
+        if(isset($_SESSION['auth_user'])){
+            $router->render('menus/menuTecnico/index', []);
+        }else{
+            header('Location: /examenfinalMRRF/');
+        }
+    }
+
+    public static function menuCliente(Router $router){
+        if(isset($_SESSION['auth_user'])){
+            $router->render('menus/menuCliente/index', []);
         }else{
             header('Location: /examenfinalMRRF/');
         }
@@ -45,10 +61,11 @@ class LoginController {
                         'codigo' => 2,
                         'mensaje' => 'Contraseña incorrecta'
                     ]);
-                } elseif ($rol == 2) {
+
+                } elseif ($rol == 4) {
                     echo json_encode([
-                        'codigo' => 2,
-                        'mensaje' => 'Usuario pendiente de activación'
+                        'codigo' => 4,
+                        'mensaje' => "Usuario Pendiente"
                     ]);
                 } elseif ($rol == 1) {
                     session_start();
@@ -56,9 +73,27 @@ class LoginController {
     
                     echo json_encode([
                         'codigo' => 1,
-                        'mensaje' => "Sesión iniciada correctamente. Bienvenido Administrador $nombre"
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido ADMINISTRADOR $nombre"
+                    ]);
+
+                } elseif ($rol == 2) {
+                    session_start();
+                    $_SESSION['auth_user'] = $dpi;
+    
+                    echo json_encode([
+                        'codigo' => 2,
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido TECNICO $nombre"
+                    ]);
+                } elseif ($rol == 3) {
+                    session_start();
+                    $_SESSION['auth_user'] = $dpi;
+    
+                    echo json_encode([
+                        'codigo' => 3,
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido CLIENTE $nombre"
                     ]);
                 }
+
             } else {
                 echo json_encode([
                     'codigo' => 2,

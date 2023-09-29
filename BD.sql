@@ -50,10 +50,13 @@ CREATE TABLE facturas (
 insert into rol (rol_nombre ) values ('ADMINISTRADOR');
 insert into rol (rol_nombre ) values ('TECNICO');
 insert into rol (rol_nombre ) values ('CLIENTE');
+insert into rol (rol_nombre ) values ('PENDIENTE');
 
 insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol, usu_situacion ) values 
 ('CARLOS REYES', 664052, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'reyes@gmail.com', 55237292, 1, 1);
-insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono ) values 
-('ABNER FUENTES', 623041, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'fuentes@gmail.com', 45330075);
-insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono ) values 
-('FRANCO ALEGRIA', 123456, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'franco@gmail.com', 40383291);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
+('ABNER FUENTES', 623041, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'fuentes@gmail.com', 45330075, 4);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
+('FRANCO ALEGRIA', 123456, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'franco@gmail.com', 40383291, 4);
+insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
+('FORTIN', 1234567, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'melany@gmail.com', 35039584, 4);

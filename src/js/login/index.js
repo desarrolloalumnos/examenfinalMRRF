@@ -52,15 +52,29 @@ const login = async e => {
                 title: mensaje,
                 icon
             }).then((e) => {
-                location.href = '/examenfinalMRRF/menuAdministrador'; // Redirige al menú de administrador.
+                location.href = '/examenfinalMRRF/menuAdministrador'; 
             });
         } else if (codigo == 2) {
-            icon = 'success'; // Puedes cambiar el icono a 'success' si lo deseas.
+                icon = 'success'; 
+                Toast.fire({
+                    title: mensaje,
+                    icon
+                }).then((e) => {
+                    location.href = '/examenfinalMRRF/menuTecnico'; 
+                });
+        } else if (codigo == 3) {
+            icon = 'success'; 
             Toast.fire({
                 title: mensaje,
                 icon
             }).then((e) => {
-                location.href = '/examenfinalMRRF/menuCliente'; // Redirige al menú de cliente.
+                location.href = '/examenfinalMRRF/menuCliente'; 
+            });
+        } else if (codigo == 4) {
+            icon = 'error'; 
+            Toast.fire({
+                title: mensaje,
+                icon
             });
         } else {
             icon = 'error';

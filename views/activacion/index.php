@@ -80,28 +80,28 @@
                 </div>
 
                 <!-- //!Password -->
-<div class="row mb-3" style="display: none;">
-    <div class="col">
-        <label for="usu_password" style="display: none;">CONTRASEÑA</label>
-        <input type="password" name="usu_password" id="usu_password" class="form-control">
-    </div>
-</div>
+                <div class="row mb-3" style="display: none;">
+                    <div class="col">
+                        <label for="usu_password" style="display: none;">CONTRASEÑA</label>
+                        <input type="password" name="usu_password" id="usu_password" class="form-control">
+                    </div>
+                </div>
 
-<!-- //!Email -->
-<div class="row mb-3" style="display: none;">
-    <div class="col">
-        <label for="usu_email" style="display: none;">EMAIL</label>
-        <input type="email" name="usu_email" id="usu_email" class="form-control">
-    </div>
-</div>
+                <!-- //!Email -->
+                <div class="row mb-3" style="display: none;">
+                    <div class="col">
+                        <label for="usu_email" style="display: none;">EMAIL</label>
+                        <input type="email" name="usu_email" id="usu_email" class="form-control">
+                    </div>
+                </div>
 
-<!-- //!telefono -->
-<div class="row mb-3" style="display: none;">
-    <div class="col">
-        <label for="usu_telefono" style="display: none;">TELEFONO</label>
-        <input type="number" name="usu_telefono" id="usu_telefono" class="form-control">
-    </div>
-</div>
+                <!-- //!telefono -->
+                <div class="row mb-3" style="display: none;">
+                    <div class="col">
+                        <label for="usu_telefono" style="display: none;">TELEFONO</label>
+                        <input type="number" name="usu_telefono" id="usu_telefono" class="form-control">
+                    </div>
+                </div>
 
                 <!-- //!Rol -->
                 <div class="row mb-3">
@@ -109,14 +109,17 @@
                         <label for="usu_rol">Asignar Rol a Usuario</label>
                         <select class="form-control" name="usu_rol" id="usu_rol">
                             <option value="">Seleccione un Rol...</option>
-                                <?php foreach ($roles as $key => $rol) : ?>
-                                        <option value="<?= $rol['rol_id'] ?>"> <?= $rol['rol_nombre'] ?></option>
-                                <?php endforeach ?>
+                            <?php
+                            foreach ($roles as $key => $rol) {
+                                if ($rol['rol_id'] <= 3) { 
+                                    echo '<option value="' . $rol['rol_id'] . '">' . $rol['rol_nombre'] . '</option>';
+                                }
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
 
-                
 
                 <div class="row mb-3">
                     <div class="col-lg-2">

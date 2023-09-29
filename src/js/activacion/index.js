@@ -48,9 +48,9 @@ const datatable = new Datatable('#tablaUsuarios', {
         {
             title: 'ROL',
             data: 'rol_nombre',
-            render: (data, type, row) => {
-                if (type === 'display' && (data === null || data === '')) {
-                    return '<span style="color: red;">PENDIENTE</span>';
+            render: function (data, type, row) {
+                if (type === 'display' && data === 'PENDIENTE') {
+                    return '<span style="color: red;">' + data + '</span>';
                 }
                 return data;
             },
