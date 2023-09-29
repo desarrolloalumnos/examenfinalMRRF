@@ -45,7 +45,7 @@ CREATE TABLE usuario (
     usu_email VARCHAR(255) UNIQUE,
     usu_telefono VARCHAR(15),
     usu_rol INTEGER REFERENCES rol(rol_id),
-    usu_situacion SMALLINT DEFAULT 1
+    usu_situacion SMALLINT DEFAULT 2
 );
 
 insert into rol (rol_nombre ) values ('ADMINISTRADOR DE TIENDA');
