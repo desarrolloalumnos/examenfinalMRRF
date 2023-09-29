@@ -18,8 +18,8 @@
         <form id="formLogin" class="col-lg-4 border rounded p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="usu_catalogo" class="form-label">Catálogo</label>
-                    <input type="number" class="form-control" id="usu_catalogo" name="usu_catalogo">
+                    <label for="usu_dpi" class="form-label">DPI</label>
+                    <input type="number" class="form-control" id="usu_dpi" name="usu_dpi">
                 </div>
                 <div class="row mb-3">
                     <div class="col">
@@ -41,7 +41,7 @@
             </div>
         </form>
     </div class="mt-3">
-    <p class="mb-0 text-center">¿No tiene una cuenta?<a href="/devjobs/registro" class="text-primary fw-bold ms-2">Registrarse</a></p> 
+    <p class="mb-0 text-center">¿No tiene una cuenta?<a href="/examenfinalMRRF/registro" class="text-primary fw-bold ms-2">Registrarse</a></p> 
     </div>
     <div class="container-fluid footer">
         <p style="font-size: xx-small; font-weight: bold;">

@@ -10,7 +10,7 @@ class LoginController {
         if(!isset($_SESSION['auth_user'])){
             $router->render('login/index', []);
         }else{
-            header('Location: /devjobs/menu');
+            header('Location: /examenfinalMRRF/menu');
         }
     }
 
@@ -18,7 +18,7 @@ class LoginController {
         if(isset($_SESSION['auth_user'])){
             $router->render('menu/index', []);
         }else{
-            header('Location: /devjobs/');
+            header('Location: /examenfinalMRRF/');
         }
     }
 
@@ -30,9 +30,9 @@ class LoginController {
     }
 
     public static function loginAPI(){
-        $catalogo = filter_var($_POST['usu_catalogo'], FILTER_SANITIZE_NUMBER_INT);
+        $dpi = filter_var($_POST['usu_dpi'], FILTER_SANITIZE_NUMBER_INT);
         $password = filter_var($_POST['usu_password'], FILTER_DEFAULT);
-        $usuarioRegistrado = Usuario::fetchFirst("SELECT * FROM usuario WHERE usu_catalogo = $catalogo");
+        $usuarioRegistrado = Usuario::fetchFirst("SELECT * FROM usuario WHERE usu_dpi = $dpi");
     
         try {
             if (is_array($usuarioRegistrado)) {
@@ -57,7 +57,7 @@ class LoginController {
                     ]);
                 } elseif ($situacion == 1) {
                     session_start();
-                    $_SESSION['auth_user'] = $catalogo;
+                    $_SESSION['auth_user'] = $dpi;
     
                     echo json_encode([
                         'codigo' => 1,
@@ -85,7 +85,7 @@ class LoginController {
         $_SESSION = [];
         session_unset();
         session_destroy();
-        header('Location: /devjobs/');
+        header('Location: /examenfinalMRRF/');
     }
 
 
@@ -96,10 +96,10 @@ class LoginController {
             $usuarioData = $_POST; 
             
             $nombreUsuario = $usuarioData['usu_nombre'];
-            $catalogoUsuario = $usuarioData['usu_catalogo'];
+            $dpiUsuario = $usuarioData['usu_dpi'];
             
             // Verificar si ya existe un usuario con el mismo nombre o catálogo
-            $usuarioExistente = Usuario::fetchFirst("SELECT * FROM usuario WHERE usu_nombre = '$nombreUsuario' OR usu_catalogo = $catalogoUsuario");
+            $usuarioExistente = Usuario::fetchFirst("SELECT * FROM usuario WHERE usu_nombre = '$nombreUsuario' OR usu_dpi = $dpiUsuario");
     
             if ($usuarioExistente) {
                 if ($usuarioExistente['usu_nombre'] === $nombreUsuario) {
@@ -108,7 +108,7 @@ class LoginController {
                         'codigo' => 2
                     ]);
                     return;
-                } elseif ($usuarioExistente['usu_catalogo'] == $catalogoUsuario) {
+                } elseif ($usuarioExistente['usu_dpi'] == $dpiUsuario) {
                     echo json_encode([
                         'mensaje' => 'El número de catálogo ya existe',
                         'codigo' => 3

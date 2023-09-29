@@ -31,7 +31,7 @@ const login = async e => {
     }
 
     try {
-        const url = '/devjobs/API/login'
+        const url = '/examenfinalMRRF/API/login'
 
         const body = new FormData(formLogin);
 
@@ -62,7 +62,7 @@ const login = async e => {
             icon
         }).then((e)=>{
             if(codigo === 1){
-                location.href = '/devjobs/menu'
+                location.href = '/examenfinalMRRF/menu'
             }
         })
 
