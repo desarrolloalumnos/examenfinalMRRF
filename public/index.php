@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\AppController;
 use Controllers\LoginController;
 use Controllers\ActivacionController;
+use Controllers\ListaController;
 
 $router = new Router();
 $router->setBaseURL('/' . $_ENV['APP_NAME']);
@@ -30,6 +31,13 @@ $router->get('/API/activacion/buscar', [ActivacionController::class,'buscarAPI']
 $router->post('/API/activacion/eliminar', [ActivacionController::class,'eliminarAPI']);
 $router->post('/API/activacion/activar', [ActivacionController::class,'activarAPI']);
 $router->post('/API/activacion/asignarol', [ActivacionController::class,'asignarolAPI']);
+
+//!Rutas para Lista de usuarios
+$router->get('/lista', [ListaController::class,'index']);
+$router->get('/API/lista/buscar', [ListaController::class,'buscarAPI']);
+$router->post('/API/lista/eliminar', [ListaController::class,'eliminarAPI']);
+$router->post('/API/lista/modificar', [ListaController::class,'modificarAPI']);
+$router->post('/API/lista/desactivar', [ListaController::class,'desactivarAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
