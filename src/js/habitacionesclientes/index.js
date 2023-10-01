@@ -68,7 +68,8 @@ const datatable = new Datatable('#tablaHabitaciones', {
         //     title : 'ELIMINAR',
         //     data: 'habitacion_id',
         //     searchable : false,
-        //     orderable : false,
+        
+        //     orderable : false, 
         //     render : (data, type, row, meta) => `<button class="btn btn-danger" data-id='${data}' >Eliminar</button>`
         // },
         
