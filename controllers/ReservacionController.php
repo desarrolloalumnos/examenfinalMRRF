@@ -8,18 +8,28 @@ use Model\Habitacion;
 use MVC\Router;
 
 class ReservacionController {
-    public static function index(Router $router) {
+    public static function indexadmin(Router $router) {
       
        
             $clientes = static::usuarios();
             $habitaciones = static::habitaciones();
 
-            $router->render('reservaciones/index', [
+            $router->render('reservaciones/reservacionesadmin/index', [
                 'clientes' => $clientes,
                 'habitaciones' => $habitaciones,
             ]);
-     
     }
+    public static function indexcliente(Router $router) {
+      
+       
+        $clientes = static::usuarios();
+        $habitaciones = static::habitaciones();
+
+        $router->render('reservaciones/reservacionescliente/index', [
+            'clientes' => $clientes,
+            'habitaciones' => $habitaciones,
+        ]);
+}
 
     public  static function habitaciones()
     {
