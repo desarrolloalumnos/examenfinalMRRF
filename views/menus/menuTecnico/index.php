@@ -43,7 +43,7 @@
               Habitaciones Del Hotel
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Habitaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
             </ul>
           </li>
 
@@ -52,8 +52,8 @@
               Reservaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Reservaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Calendario de Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservaciones">Administrar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li>
             </ul>
           </li>
 

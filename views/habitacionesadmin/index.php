@@ -1,16 +1,65 @@
-<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
-    <a class="navbar-brand" href="/examenfinalMRRF">Menú Principal</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+    <a class="navbar-brand" href="#">
+  <img src="<?= asset('images/cit.png') ?>" alt="Logotipo" style="max-width: 40px; height: auto;">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-    <!-- Enlaces del menú -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+<a class="navbar-brand" href="#">Examen Final</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/examenfinalMRRF/habitacionesadmin">Formulario de Habitaciones</a>
-            </li>            
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuarios Pendientes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
+              <li><a class="dropdown-item" href="/examenfinalMRRF/activacion">Solicitud de Usuarios Pendientes</a></li>
+              <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Habitaciones Del Hotel
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reservaciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservaciones">Administrar Reservaciones</a></li>
+            <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reporte de Gráficas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
+            </ul>
+          </li>
         </ul>
+        </div>
+    <div class="d-flex">
+      <a href="/examenfinalMRRF/menuAdministrador" class="btn btn-info me-2">Menu Principal</a>
+      <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar Sesión</a>
     </div>
-    <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar sesión</a>
+  </div>
 </nav>
+
 <h1 class="text-center">Formulario de Habitaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
