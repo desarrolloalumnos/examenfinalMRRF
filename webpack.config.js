@@ -11,6 +11,7 @@ module.exports = {
     'js/activacion/index' : './src/js/activacion/index.js',
     'js/lista/index' : './src/js/lista/index.js',
     'js/login/index' : './src/js/login/index.js',
+    'js/registro/index' : './src/js/registro/index.js',
     'js/reservaciones/index' : './src/js/reservaciones/index.js',
   },
   output: {
