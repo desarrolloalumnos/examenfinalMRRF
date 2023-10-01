@@ -57,20 +57,20 @@ const datatable = new Datatable('#tablaHabitaciones', {
             
             render : (data) => 'Q. ' + data
         },
-        {
-            title : 'MODIFICAR',
-            data: 'habitacion_id',
-            searchable : false,
-            orderable : false,
-            render : (data, type, row, meta) => `<button class="btn btn-warning" data-id='${data}' data-numero='${row["habitacion_numero"]}' data-tipo='${row["habitacion_tipo"]}' data-descripcion='${row["habitacion_descripcion"]}' data-tarifa='${row["habitacion_tarifa"]}' data-disponibilidad='${row["habitacion_disponibilidad"]}'>Modificar</button>`
-        },
-        {
-            title : 'ELIMINAR',
-            data: 'habitacion_id',
-            searchable : false,
-            orderable : false,
-            render : (data, type, row, meta) => `<button class="btn btn-danger" data-id='${data}' >Eliminar</button>`
-        },
+        // {
+        //     title : 'MODIFICAR',
+        //     data: 'habitacion_id',
+        //     searchable : false,
+        //     orderable : false,
+        //     render : (data, type, row, meta) => `<button class="btn btn-warning" data-id='${data}' data-numero='${row["habitacion_numero"]}' data-tipo='${row["habitacion_tipo"]}' data-descripcion='${row["habitacion_descripcion"]}' data-tarifa='${row["habitacion_tarifa"]}' data-disponibilidad='${row["habitacion_disponibilidad"]}'>Modificar</button>`
+        // },
+        // {
+        //     title : 'ELIMINAR',
+        //     data: 'habitacion_id',
+        //     searchable : false,
+        //     orderable : false,
+        //     render : (data, type, row, meta) => `<button class="btn btn-danger" data-id='${data}' >Eliminar</button>`
+        // },
         
     ]
 })
@@ -107,7 +107,6 @@ const buscar = async () => {
         console.log(error);
     }
 }
-
 const guardar = async (evento) => {
     evento.preventDefault();
     if (!validarFormulario(formulario, ['habitacion_id'])) {

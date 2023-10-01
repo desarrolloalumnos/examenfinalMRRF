@@ -10,6 +10,9 @@ class HabitacionController {
     public static function index(Router $router){
         $router->render('habitacionesadmin/index', []);
     }
+    public static function indexclientes(Router $router){
+        $router->render('habitacionesclientes/index', []);
+    }
 
 
     public static function guardarApi(){
@@ -40,22 +43,19 @@ class HabitacionController {
     }
 
 
-    public static function buscarAPI(){
-        // $productos = Producto::all();
-        $habitacion_numero = $_GET['habitacion_numero'];
-        $habitacion_tipo = $_GET['habitacion_tipo'];
+   public static function buscarAPI()
+    {
+        $habitacion_numero = $_GET['habitacion_numero'] ?? '';
+        $sql = "SELECT * FROM habitaciones WHERE habitacion_situacion = 1 ";
+        if ($habitacion_numero != '') {
+            $habitacion_numero = strtolower($habitacion_numero);
+            $sql .= " AND LOWER(habitacion_numero) LIKE '%$habitacion_numero%' ";
+        }
 
-        $sql = "SELECT * FROM habitaciones where habitacion_situacion = 1 ";
-        if($habitacion_numero != '') {
-            $sql.= " and habitacion_numero like '%$habitacion_numero%' ";
-        }
-        if($habitacion_tipo != '') {
-            $sql.= " and habitacion_tipo = $habitacion_tipo ";
-        }
         try {
-            
+
             $habitaciones = Habitacion::fetchArray($sql);
-    
+
             echo json_encode($habitaciones);
         } catch (Exception $e) {
             echo json_encode([

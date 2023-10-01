@@ -19,7 +19,7 @@ $router->post('/API/habitacionesadmin/modificar', [HabitacionController::class,'
 $router->post('/API/habitacionesadmin/eliminar', [HabitacionController::class,'eliminarApi']);
 
 // habitacion clientes
-
+$router->get('/habitacionesclientes', [HabitacionController::class,'indexclientes']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
