@@ -13,6 +13,9 @@ class HabitacionController {
     public static function indexclientes(Router $router){
         $router->render('habitacionesclientes/index', []);
     }
+    public static function indexreservaciones(Router $router){
+        $router->render('reservaciones/index', []);
+    }
 
 
     public static function guardarApi(){
