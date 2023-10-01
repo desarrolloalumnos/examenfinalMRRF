@@ -1,11 +1,11 @@
 <?php
+
 namespace Model;
 
-class  Habitacion extends ActiveRecord{
-    protected static $tabla = 'habitaciones';
-    protected static $columnasDB = ['habitacion_numero','habitacion_tipo','habitacion_descripcion','habitacion_tarifa','habitacion_disponibilidad', 'habitacion_situacion'];
-    protected static $idTabla = 'habitacion_id';
-
+class Habitacion extends ActiveRecord{
+    public static $tabla = 'habitaciones';
+    public static $columnasDB = ['habitacion_numero','habitacion_tipo','habitacion_descripcion','habitacion_tarifa','habitacion_disponibilidad','habitacion_situacion'];
+    public static $idTabla = 'habitacion_id';
 
     public $habitacion_id;
     public $habitacion_numero;
@@ -13,9 +13,8 @@ class  Habitacion extends ActiveRecord{
     public $habitacion_descripcion;
     public $habitacion_tarifa;
     public $habitacion_disponibilidad;
-  
     public $habitacion_situacion;
-    
+
     public function __construct($args =[])
     {
         $this->habitacion_id = $args['habitacion_id'] ?? null;
@@ -25,8 +24,6 @@ class  Habitacion extends ActiveRecord{
         $this->habitacion_tarifa = $args['habitacion_tarifa'] ?? '';
         $this->habitacion_disponibilidad = $args['habitacion_disponibilidad'] ?? '';
         $this->habitacion_situacion = $args['habitacion_situacion'] ?? '1';
-        
     }
-}
 
-?>
+}
