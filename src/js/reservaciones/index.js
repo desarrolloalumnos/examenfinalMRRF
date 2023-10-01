@@ -58,7 +58,10 @@ const datatable = new Datatable('#tablaClientes', {
 });
 
 const buscar = async () => {
+  
+ 
     const url = `/examenfinalMRRF/API/reservaciones/buscar`;
+
     const config = {
         method: 'GET'
     };
@@ -66,7 +69,8 @@ const buscar = async () => {
     try {
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
-
+        console.log(data)
+       
         datatable.clear().draw();
         if (data) {
             contador = 1;
@@ -81,6 +85,8 @@ const buscar = async () => {
         console.log(error);
     }
 };
+
+
 
 const guardar = async (evento) => {
     evento.preventDefault();

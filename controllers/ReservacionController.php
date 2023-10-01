@@ -106,32 +106,24 @@ class ReservacionController {
    
     public static function buscarApi()
     {
- 
-        
-        $sql = "SELECT
-        reserva_id,
-        u.usu_nombre AS reserva_cliente_id,
-        h.habitacion_numero AS reserva_habitacion_id,
-        r.reserva_fecha_inicio,
-        r.reserva_fecha_fin
-    FROM
-        reservas AS r
-    JOIN
-        usuario AS u ON r.reserva_cliente_id = u.usu_id
-    JOIN
-        habitaciones AS h ON r.reserva_habitacion_id = h.habitacion_id
-        where reserva_situacion = 1
-    ";      
-        
-        
-        
+            $sql = "SELECT
+            reserva_id,
+            u.usu_nombre AS reserva_cliente_id,
+            h.habitacion_numero AS reserva_habitacion_id,
+            r.reserva_fecha_inicio,
+            r.reserva_fecha_fin
+        FROM
+            reservas AS r
+        JOIN
+            usuario AS u ON r.reserva_cliente_id = u.usu_id
+        JOIN
+            habitaciones AS h ON r.reserva_habitacion_id = h.habitacion_id
+        WHERE reserva_situacion = 1";
+       
         try {
-            
             $reservacion = Reservacion::fetchArray($sql);
             header('Content-Type: application/json');
-
             echo json_encode($reservacion);
-         
         } catch (Exception $e) {
             echo json_encode([
                 'detalle' => $e->getMessage(),
@@ -140,6 +132,8 @@ class ReservacionController {
             ]);
         }
     }
+    
+    
 
     public static function modificarApi(){
      
