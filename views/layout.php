@@ -6,6 +6,7 @@
     <script src="build/js/app.js"></script>
     <link rel="shortcut icon" href="<?= asset('images/cit.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= asset('build/styles.css') ?>">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>DemoApp</title>
 </head>
 <body>

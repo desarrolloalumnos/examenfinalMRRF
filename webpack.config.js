@@ -7,7 +7,8 @@ module.exports = {
     'js/app' : './src/js/app.js',
     'js/inicio' : './src/js/inicio.js',
     'js/habitacionesadmin/index' : './src/js/habitacionesadmin/index.js',
-    'js/habitacionesclientes/index' : './src/js/habitacionesclientes/index.js'
+    'js/habitacionesclientes/index' : './src/js/habitacionesclientes/index.js',
+    'js/reservaciones/index' : './src/js/reservaciones/index.js',
   },
   output: {
     filename: '[name].js',
