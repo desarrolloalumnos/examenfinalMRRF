@@ -31,7 +31,7 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 
-      <a class="navbar-brand" href="#">Examen Final</a>
+<a class="navbar-brand" href="#">Examen Final</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,7 +53,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
             <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionescliente">Buscar Habitaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
             </ul>
           </li>
 
@@ -63,7 +63,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
             <li><a class="dropdown-item" href="/examenfinalMRRF/reservaciones">Administrar Reservaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li>
+            <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
             </ul>
           </li>
 
@@ -72,7 +72,7 @@
               Reporte de Gráficas
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
             </ul>
           </li>
         </ul>

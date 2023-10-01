@@ -59,7 +59,7 @@
     </div>
   </div>
 </nav>
-
+<br><br><br>
 <h1 class="text-center">Formulario de Habitaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
