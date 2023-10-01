@@ -60,13 +60,6 @@ const datatable = new Datatable('#tablaUsuarios', {
             render : (data, type, row, meta) => `<button class="btn btn-warning" data-id='${data}' data-nombre='${row["usu_nombre"]}' data-dpi='${row["usu_dpi"]}' data-email='${row["usu_email"]}' data-telefono='${row["usu_telefono"]}' data-password='${row["usu_password"]}' data-rol='${row["rol_nombre"]}'>Modificar Datos del Usuario</button>`
         },
         {
-            title : 'DESACTIVAR',
-            data: 'usu_id',
-            searchable: false,
-            orderable: false,
-            render : (data, type, row, meta) => `<button class="btn btn-info" data-id='${data}' data-nombre='${row["usu_nombre"]}' data-dpi='${row["usu_dpi"]}'data-rol='${row["rol_nombre"]}'>Desactivar Usuario</button>`
-        },
-        {
             title : 'ELIMINAR',
             data: 'usu_id',
             searchable: false,
@@ -236,25 +229,24 @@ const ocultarFormulario = () => {
 //!----------------------------------------------------------------------------------------------------
 //!----------------------------------------------------------------------------------------------------
 //!Para colocar los datos sobre el formulario
-const traeDatos = (e) => {
-    const button = e.target;
+const traeDatos = (button) => {
+    
     const id = button.dataset.id;
-    const dpi = button.dataset.dpi;
     const nombre = button.dataset.nombre;
+    const dpi = button.dataset.dpi;
     const email = button.dataset.email;
     const telefono = button.dataset.telefono;
     const password = button.dataset.password;
 
-
-    //! Llenar el formulario con los datos obtenidos
+    // Llenar el formulario con los datos obtenidos
     formulario.usu_id.value = id;
     formulario.usu_nombre.value = nombre;
     formulario.usu_dpi.value = dpi;
     formulario.usu_email.value = email;
     formulario.usu_telefono.value = telefono;
     formulario.usu_password.value = password;
+};
 
-}
 
 //!Aca esta la funcino de cancelar la accion de modificar un registro.
 const cancelarAccion = () => {
@@ -341,47 +333,30 @@ btnModificarPassword.addEventListener("click", function () {
             elemento.style.display = "none";
         }
     });
-
-    // Ocultar botones Modificar y Cancelar
     btnCancelar.style.display = "none";
-
-    // Ocultar botón "Modificar Contraseña"
     btnModificarPassword.style.display = "none";
-
-    // Mostrar campos de contraseña y checkbox
     contrasenaContainer.style.display = "block";
-
-    // Mostrar botón "Regresar" junto al botón "Modificar"
     btnRegresar.style.display = "block";
-    btnRegresar.style.marginLeft = "5px"; // Ajusta el margen izquierdo
+    btnRegresar.style.marginLeft = "5px"; 
 
-    // Limpiar el campo de contraseña
     usu_password.value = "";
 });
 
 btnRegresar.addEventListener("click", function () {
-    // Mostrar elementos a ocultar, incluido el botón "Modificar"
     elementosAOcultar.forEach(function (elemento) {
         elemento.style.display = "block";
     });
-
-    // Mostrar botones Modificar y Cancelar
     btnCancelar.style.display = "block";
-
-    // Mostrar botón "Modificar Contraseña"
     btnModificarPassword.style.display = "block";
-
-    // Ocultar campos de contraseña y checkbox
     contrasenaContainer.style.display = "none";
-
-    // Ocultar botón "Regresar"
     btnRegresar.style.display = "none";
 });
 
 
-datatable.on('click', '.btn-warning', () => {
+datatable.on('click', '.btn-warning', (event) => {
+    const button = event.currentTarget;
     mostrarFormulario();
-    traeDatos(event);
+    traeDatos(button);
 });
 btnCancelar.addEventListener('click', ocultarFormulario);
 btnModificar.addEventListener('click', modificar);

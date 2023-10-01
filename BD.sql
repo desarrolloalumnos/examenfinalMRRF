@@ -59,4 +59,4 @@ insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono,
 insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
 ('FRANCO ALEGRIA', 123456, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'franco@gmail.com', 40383291, 4);
 insert into usuario (usu_nombre, usu_dpi, usu_password, usu_email, usu_telefono, usu_rol ) values 
-('FORTIN', 1234567, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'melany@gmail.com', 35039584, 4);
+('FORTIN', 1234567, '$2y$10$Nz6/ESQw7b7xW1Q2j.WEM.g5LQ/NSSmHnhZpfolFAH.ltD0GGRKGS', 'fortin@gmail.com', 35039584, 4);

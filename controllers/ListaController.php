@@ -59,33 +59,33 @@ public static function buscarRoles(){
         }
     }
 
-    //!Funcion Desactivar a Usuarios
-    public static function desactivarAPI(){
-        try{
-            $usu_id = $_POST['usu_id'];
-            $usuario = Usuario::find($usu_id);
-            $usuario->usu_situacion = 3;
-            $resultado = $usuario->actualizar();
+    // //!Funcion Desactivar a Usuarios
+    // public static function desactivarAPI(){
+    //     try{
+    //         $usu_id = $_POST['usu_id'];
+    //         $usuario = Usuario::find($usu_id);
+    //         $usuario->usu_situacion = 3;
+    //         $resultado = $usuario->actualizar();
 
-            if($resultado['resultado'] == 1){
-                echo json_encode([
-                    'mensaje' => 'Usuario Desactivado Exitosamente',
-                    'codigo' => 1
-                ]);
-            }else{
-                echo json_encode([
-                    'mensaje' => 'Ocurrio un error',
-                    'codigo' => 0
-                ]);
-            }
-        }catch(Exception $e){
-            echo json_encode([
-                'detalle' => $e->getMessage(),
-                'mensaje'=> 'Ocurrio un Error',
-                'codigo' => 0
-        ]);
-        }
-    }
+    //         if($resultado['resultado'] == 1){
+    //             echo json_encode([
+    //                 'mensaje' => 'Usuario Desactivado Exitosamente',
+    //                 'codigo' => 1
+    //             ]);
+    //         }else{
+    //             echo json_encode([
+    //                 'mensaje' => 'Ocurrio un error',
+    //                 'codigo' => 0
+    //             ]);
+    //         }
+    //     }catch(Exception $e){
+    //         echo json_encode([
+    //             'detalle' => $e->getMessage(),
+    //             'mensaje'=> 'Ocurrio un Error',
+    //             'codigo' => 0
+    //     ]);
+    //     }
+    // }
     
 
     //!Funcion Eliminar
