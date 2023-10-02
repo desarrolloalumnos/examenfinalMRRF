@@ -13,15 +13,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          
-
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuarios Pendientes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
+              <li><a class="dropdown-item" href="/examenfinalMRRF/activacion">Solicitud de Usuarios Pendientes</a></li>
+              <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
+            </ul>
+          </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reservaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionescliente">Buscar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionesadmin">Administrar Reservaciones</a></li>
             <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
             </ul>
           </li>
@@ -37,13 +44,13 @@
         </ul>
         </div>
     <div class="d-flex">
-      <a href="/examenfinalMRRF/menuCliente" class="btn btn-info me-2">Menu Principal</a>
+      <a href="/examenfinalMRRF/menuAdministrador" class="btn btn-info me-2">Menu Principal</a>
       <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar Sesión</a>
     </div>
   </div>
 </nav>
 <br><br><br>
-<h1 class="text-center">Buscar Habitaciones</h1>
+<h1 class="text-center">Administrador de Habitaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
         <input type="hidden" name="habitacion_id" id="habitacion_id">
@@ -76,9 +83,9 @@
             </div>
         </div>
         <div class="row mb-3">
-            <!-- <div class="col">
+            <div class="col">
                 <button type="submit" form="formularioHabitaciones" id="btnGuardar" data-saludo="hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
-            </div> -->
+            </div>
             <div class="col">
                 <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
             </div>
@@ -99,4 +106,4 @@
     </div>
 </div>
 
-<script src="<?= asset('./build/js/habitacionesclientes/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/habitacionesempleados/index.js')  ?>"></script>
