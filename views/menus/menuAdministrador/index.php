@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 56px;
+      position: relative;
+      min-height: 100vh;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background-color: #f8f9fa;
+    }
+  </style>
+  <title>Navbar con Bootstrap</title>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
     <a class="navbar-brand" href="#">
@@ -20,6 +44,15 @@
             <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
               <li><a class="dropdown-item" href="/examenfinalMRRF/activacion">Solicitud de Usuarios Pendientes</a></li>
               <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Habitaciones Del Hotel
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
             </ul>
           </li>
 
@@ -49,61 +82,19 @@
     </div>
   </div>
 </nav>
-<br><br><br>
-<h1 class="text-center">Administrador de Habitaciones</h1>
-<div class="row justify-content-center mb-5">
-    <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
-        <input type="hidden" name="habitacion_id" id="habitacion_id">
-        <div class="row mb-3">
-            <div class="col">
-                <label for="habitacion_numero">Ingrese el numero de habitacion</label>
-                <input type="number" name="habitacion_numero" id="habitacion_numero" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="habitacion_tipo">Ingrese el tipo de habitacion</label>
-                <input type="text" name="habitacion_tipo" id="habitacion_tipo" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-                <div class="col">
-                <label for="habitacion_descripcion">Descripcion de la habitacion</label>
-                <input type="text" name="habitacion_descripcion" id="habitacion_descripcion" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="habitacion_tarifa">Tarifa de la habitacion</label>
-                <input type="number" name="habitacion_tarifa" id="habitacion_tarifa" class="form-control" >
-            </div>
-            <div class="col">
-                <label for="habitacion_disponibilidad">Disponibilidad de la habitacion</label>
-                <input type="text" name="habitacion_disponibilidad" id="habitacion_disponibilidad" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <button type="submit" form="formularioHabitaciones" id="btnGuardar" data-saludo="hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
-            </div>
-            <div class="col">
-                <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
-            </div>
-            <div class="col">
-                <button type="button" id="btnBuscar" class="btn btn-info w-100">Buscar</button>
-            </div>
-            <div class="col">
-                <button type="button" id="btnCancelar" class="btn btn-danger w-100">Cancelar</button>
-            </div>
-        </div>
-    </form>
+         
+<div class="container text-center">
+  <h1>Bienvenido</h1>
+  <img src="<?= asset('images/cit.png') ?>" alt="Logotipo" style="max-width: 800px;">
+  <!-- Contenido de tu página MVC aquí -->
 </div>
 
-<div class="row justify-content-center">
-    <div class="col table-responsive" style="max-width: 80%; padding: 10px;">
-        <table id="tablaHabitaciones" class="table table-bordered table-hover">
-        </table>
-    </div>
+<div class="container-fluid footer">
+  <p style="font-size: xx-small; font-weight: bold;">
+    Comando de Informática y Tecnología, <?= date('Y') ?> &copy;
+  </p>
 </div>
 
-<script src="<?= asset('./build/js/habitacionesadmin/index.js')  ?>"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

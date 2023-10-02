@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 56px;
+    }
+  </style>
+  <title>Navbar con Bootstrap</title>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
     <a class="navbar-brand" href="#">
@@ -13,7 +27,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Usuarios Pendientes
             </a>
@@ -22,16 +36,16 @@
               <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
             </ul>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Reservaciones
+              Habitaciones Del Hotel
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionesadmin">Administrar Reservaciones</a></li>
-            <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
             </ul>
           </li>
+
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,42 +63,49 @@
     </div>
   </div>
 </nav>
-<br><br><br>
-<h1 class="text-center">Administrador de Habitaciones</h1>
+
 <div class="row justify-content-center mb-5">
-    <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
-        <input type="hidden" name="habitacion_id" id="habitacion_id">
-        <div class="row mb-3">
-            <div class="col">
-                <label for="habitacion_numero">Ingrese el numero de habitacion</label>
-                <input type="number" name="habitacion_numero" id="habitacion_numero" class="form-control">
+    <form class="col-lg-8 border bg-light p-3" id="formularioClientes">
+        <h1 class="text-center">RESERVACIONES</h1>
+        <input type="hidden" name="reserva_id" id="reserva_id">
+
+        <div class="row mb-4 mt-3">
+            <div class="col-lg-12">
+                <label for="select">CLIENTES</label>
+                <select class="form-control" name="reserva_cliente_id" id="reserva_cliente_id">
+                    <option id="cliente" value="">Seleccione un cliente</option>
+                    <?php foreach ($clientes as $cliente) { ?>
+                        <option value="<?= $cliente['usu_id']  ?>"><?= $cliente['usu_nombre']  ?></option>
+                    <?php  }  ?>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-4 mt-3">
+            <div class="col-lg-12">
+                <label for="select">HABITACIONES</label>
+                <select class="form-control" name="reserva_habitacion_id" id="reserva_habitacion_id">
+                    <option id="habitacion" value="">Seleccione una habitacion</option>
+                    <?php foreach ($habitaciones as $habitacion) { ?>
+                        <option value="<?= $habitacion['habitacion_id']  ?>"><?= $habitacion['habitacion_numero']  ?></option>
+                    <?php  }  ?>
+                </select>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="habitacion_tipo">Ingrese el tipo de habitacion</label>
-                <input type="text" name="habitacion_tipo" id="habitacion_tipo" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-                <div class="col">
-                <label for="habitacion_descripcion">Descripcion de la habitacion</label>
-                <input type="text" name="habitacion_descripcion" id="habitacion_descripcion" class="form-control">
+                <label for="cliente_fecha">ENTRADA</label>
+                <input type="datetime-local" name="reserva_fecha_inicio" id="reserva_fecha_inicio" class="form-control mb-3">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="habitacion_tarifa">Tarifa de la habitacion</label>
-                <input type="number" name="habitacion_tarifa" id="habitacion_tarifa" class="form-control" >
-            </div>
-            <div class="col">
-                <label for="habitacion_disponibilidad">Disponibilidad de la habitacion</label>
-                <input type="text" name="habitacion_disponibilidad" id="habitacion_disponibilidad" class="form-control">
+                <label for="cliente_fecha">SALIDA</label>
+                <input type="datetime-local" name="reserva_fecha_fin" id="reserva_fecha_fin" class="form-control mb-3">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <button type="submit" form="formularioHabitaciones" id="btnGuardar" data-saludo="hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
+                <button type="button"  id="btnGuardar" data-saludo="hola" data-saludo2="hola2" class="btn btn-primary w-100">Guardar</button>
             </div>
             <div class="col">
                 <button type="button" id="btnModificar" class="btn btn-warning w-100">Modificar</button>
@@ -99,11 +120,13 @@
     </form>
 </div>
 
-<div class="row justify-content-center">
-    <div class="col table-responsive" style="max-width: 80%; padding: 10px;">
-        <table id="tablaHabitaciones" class="table table-bordered table-hover">
+
+<div class="row justify-content-center ">
+    <div class="col table-responsive" style="max-width: 70%; padding: 10px;">
+
+        <table id="tablaClientes" class="table table-bordered table-hover  ">
         </table>
     </div>
 </div>
 
-<script src="<?= asset('./build/js/habitacionesadmin/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/reservaciones/index.js')  ?>"></script>
