@@ -13,6 +13,7 @@ module.exports = {
     'js/login/index' : './src/js/login/index.js',
     'js/registro/index' : './src/js/registro/index.js',
     'js/reservaciones/index' : './src/js/reservaciones/index.js',
+    'js/reservacionescliente/index' : './src/js/reservacionescliente/index.js',
   },
   output: {
     filename: '[name].js',

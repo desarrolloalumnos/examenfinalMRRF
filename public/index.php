@@ -18,18 +18,25 @@ $router->get('/', [AppController::class,'index']);
 
 
 //habitacionesadmin
-$router->get('/habitacionesadmin', [HabitacionController::class,'index']);
+$router->get('/habitaciones/habitacionesadmin', [HabitacionController::class,'index']);
 $router->get('/API/habitacionesadmin/buscar', [HabitacionController::class,'buscarApi']);
 $router->post('/API/habitacionesadmin/guardar', [HabitacionController::class,'guardarApi']);
 $router->post('/API/habitacionesadmin/modificar', [HabitacionController::class,'modificarApi']);
 $router->post('/API/habitacionesadmin/eliminar', [HabitacionController::class,'eliminarApi']);
 
-// habitacion clientes
-$router->get('/habitacionesclientes', [HabitacionController::class,'indexclientes']);
+// habitacion empleados
+$router->get('/habitaciones/habitacionesempleados', [HabitacionController::class,'indexempleados']);
+// habitaciones clientes 
+$router->get('/habitaciones/habitacionesclientes', [HabitacionController::class,'indexclientes']);
 
-// reservaciones
-$router->get('/reservacionesadmin', [ReservacionController::class,'indexadmin']);
-$router->get('/reservacionescliente', [ReservacionController::class,'indexcliente']);
+// reservaciones admin
+$router->get('/reservaciones/reservacionesadmin', [ReservacionController::class,'indexadmin']);
+
+// reservaciones empleados
+$router->get('/reservaciones/reservacionesempleados', [ReservacionController::class,'indexempleados']);
+
+// reservaciones clientes
+$router->get('/reservaciones/reservacionescliente', [ReservacionController::class,'indexcliente']);
 $router->get('/API/reservaciones/buscar', [ReservacionController::class,'buscarApi']);
 $router->post('/API/reservaciones/guardar', [ReservacionController::class,'guardarApi']);
 $router->post('/API/reservaciones/modificar', [ReservacionController::class,'modificarApi']);

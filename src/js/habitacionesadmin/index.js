@@ -45,8 +45,9 @@ const datatable = new Datatable('#tablaHabitaciones', {
             render: function (data) {
                 const estados = {
                     1: "Disponible",
-                    2: "NO disponible",
-                    3: "Reservado",
+                    2: "No disponible",
+                    3: "En mantenimiento",
+                    4: "Privado",
                 };
                 return estados[data] || "Privado";
             }

@@ -8,14 +8,17 @@ use MVC\Router;
 
 class HabitacionController {
     public static function index(Router $router){
-        $router->render('habitacionesadmin/index', []);
+        $router->render('habitaciones/habitacionesadmin/index', []);
     }
     public static function indexclientes(Router $router){
-        $router->render('habitacionesclientes/index', []);
+        $router->render('habitaciones/habitacionesclientes/index', []);
     }
-    public static function indexreservaciones(Router $router){
-        $router->render('reservaciones/index', []);
+    public static function indexempleados(Router $router){
+        $router->render('habitaciones/habitacionesempleados/index', []);
     }
+    // public static function indexreservaciones(Router $router){
+    //     $router->render('reservaciones/index', []);
+    // }
 
 
     public static function guardarApi(){
