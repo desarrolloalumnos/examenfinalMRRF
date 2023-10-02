@@ -58,7 +58,7 @@ class LoginController {
     
                 if (!$verificacion) {
                     echo json_encode([
-                        'codigo' => 2,
+                        'codigo' => 4,
                         'mensaje' => 'Contraseña incorrecta'
                     ]);
 
@@ -96,7 +96,7 @@ class LoginController {
 
             } else {
                 echo json_encode([
-                    'codigo' => 2,
+                    'codigo' => 4,
                     'mensaje' => 'Usuario no encontrado'
                 ]);
             }
