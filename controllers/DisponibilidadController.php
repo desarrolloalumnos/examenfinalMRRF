@@ -7,8 +7,14 @@ use Model\Disponibilidad;
 use MVC\Router;
 
 class DisponibilidadController {
-    public static function estadistica(Router $router){
-        $router->render('disponibilidad/estadistica', []);
+    public static function indexAdmin(Router $router){
+        $router->render('disponibilidad/disponibilidadAdmin/index', []);
+    }
+    public static function indexTecnico(Router $router){
+        $router->render('disponibilidad/disponibilidadTecnico/index', []);
+    }
+    public static function indexCliente(Router $router){
+        $router->render('disponibilidad/disponibilidadCliente/index', []);
     }
 
     public static function estadisticas(){

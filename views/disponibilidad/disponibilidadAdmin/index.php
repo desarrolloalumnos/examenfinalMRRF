@@ -71,7 +71,7 @@
               Reporte de Gráficas
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/graficaAdmin">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/disponibilidad/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
             </ul>
           </li>
         </ul>
@@ -82,19 +82,23 @@
     </div>
   </div>
 </nav>
-         
-<div class="container text-center">
-  <h1>Bienvenido</h1>
-  <img src="<?= asset('images/cit.png') ?>" alt="Logotipo" style="max-width: 800px;">
-  <!-- Contenido de tu página MVC aquí -->
-</div>
 
-<div class="container-fluid footer">
-  <p style="font-size: xx-small; font-weight: bold;">
-    Comando de Informática y Tecnología, <?= date('Y') ?> &copy;
-  </p>
+<center>
+<h1>DISPONIBILIDAD DE HABITACIONES</h1>
+<div class="row">
+    <div class="col-lg-9">
+        <canvas id="chartdisponibilidad" width="100%"></canvas>
+    </div>
 </div>
+<button id="regresarBtn" style="background-color: red; color: white;">Regresar</button>
+</center>
+<script src="<?=asset('./build/js/disponibilidad/estadistica.js')?>"></script>
+<script>
+    document.getElementById('regresarBtn').addEventListener('click', function() {
+        window.location.href = '/examenfinalMRRF/menuAdministrador';
+    });
+</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -70,7 +70,9 @@ $router->post('/API/lista/desactivar', [ListaController::class,'desactivarAPI'])
 //!Reyes Soto
 
 //Rutas para disponibilidad
-$router->get('/disponibilidad/estadistica', [DisponibilidadController::class,'estadistica']);
+$router->get('/graficaAdmin', [DisponibilidadController::class,'indexAdmin']);
+$router->get('/graficaTecnico', [DisponibilidadController::class,'indexTecnico']);
+$router->get('/graficaCliente', [DisponibilidadController::class,'indexCliente']);
 $router->get('/API/estadistica', [DisponibilidadController::class,'estadisticas']);
 $router->get('/API/disponibilidad/buscar', [DisponibilidadController::class,'buscarAPI']);
 
