@@ -21,7 +21,6 @@
   </style>
   <title>Navbar con Bootstrap</title>
 </head>
-</head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -32,7 +31,7 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<a class="navbar-brand" href="#">Examen Final</a>
+      <a class="navbar-brand" href="#">Examen Final</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,7 +52,7 @@
               Habitaciones Del Hotel
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Habitaciones</a></li>
             </ul>
           </li>
 
@@ -62,8 +61,8 @@
               Reservaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionesadmin">Administrar Reservaciones</a></li>
-            <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Administrar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Calendario de Reservaciones</a></li>
             </ul>
           </li>
 
