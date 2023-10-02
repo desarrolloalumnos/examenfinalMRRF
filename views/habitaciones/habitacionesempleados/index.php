@@ -106,4 +106,4 @@
     </div>
 </div>
 
-<script src="<?= asset('./build/js/habitacionesadmin/index.js')  ?>"></script>
+<script src="<?= asset('./build/js/habitacionesempleados/index.js')  ?>"></script>

@@ -8,6 +8,7 @@ module.exports = {
     'js/inicio' : './src/js/inicio.js',
     'js/habitacionesadmin/index' : './src/js/habitacionesadmin/index.js',
     'js/habitacionesclientes/index' : './src/js/habitacionesclientes/index.js',
+    'js/habitacionesempleados/index' : './src/js/habitacionesempleados/index.js',
     'js/activacion/index' : './src/js/activacion/index.js',
     'js/lista/index' : './src/js/lista/index.js',
     'js/login/index' : './src/js/login/index.js',
