@@ -9,6 +9,7 @@ use Controllers\ReservacionController;
 use Controllers\LoginController;
 use Controllers\ActivacionController;
 use Controllers\ListaController;
+use Controllers\DisponibilidadController;
 
 
 $router = new Router();
@@ -72,7 +73,10 @@ $router->post('/API/lista/modificar', [ListaController::class,'modificarAPI']);
 $router->post('/API/lista/desactivar', [ListaController::class,'desactivarAPI']);
 //!Reyes Soto
 
-
+//Rutas para disponibilidad
+$router->get('/disponibilidad/estadistica', [DisponibilidadController::class,'estadistica']);
+$router->get('/API/estadistica', [DisponibilidadController::class,'estadisticas']);
+$router->get('/API/disponibilidad/buscar', [DisponibilidadController::class,'buscarAPI']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
