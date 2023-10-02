@@ -14,6 +14,8 @@ btnModificar.disabled = true;
 btnModificar.parentElement.style.display = 'none';
 btnBuscar.disabled = true;
 btnBuscar.parentElement.style.display = 'none';
+btnBuscar.disabled = true;
+btnBuscar.parentElement.style.display = 'none';
 btnCancelar.disabled = true;
 btnCancelar.parentElement.style.display = 'none';
 
