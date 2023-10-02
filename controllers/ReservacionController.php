@@ -30,6 +30,17 @@ class ReservacionController {
             'habitaciones' => $habitaciones,
         ]);
 }
+public static function indextecnico(Router $router) {
+      
+       
+    $clientes = static::usuarios();
+    $habitaciones = static::habitaciones();
+
+    $router->render('reservaciones/reservacionestecnico/index', [
+        'clientes' => $clientes,
+        'habitaciones' => $habitaciones,
+    ]);
+}
 
     public  static function habitaciones()
     {

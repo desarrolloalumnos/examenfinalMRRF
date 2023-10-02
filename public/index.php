@@ -26,10 +26,12 @@ $router->post('/API/habitacionesadmin/eliminar', [HabitacionController::class,'e
 
 // habitacion clientes
 $router->get('/habitacionesclientes', [HabitacionController::class,'indexclientes']);
+$router->get('/habitacionestecnico', [HabitacionController::class,'indextecnico']);
 
 // reservaciones
 $router->get('/reservacionesadmin', [ReservacionController::class,'indexadmin']);
 $router->get('/reservacionescliente', [ReservacionController::class,'indexcliente']);
+$router->get('/reservacionestecnico', [ReservacionController::class,'indextecnico']);
 $router->get('/API/reservaciones/buscar', [ReservacionController::class,'buscarApi']);
 $router->post('/API/reservaciones/guardar', [ReservacionController::class,'guardarApi']);
 $router->post('/API/reservaciones/modificar', [ReservacionController::class,'modificarApi']);
