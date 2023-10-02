@@ -61,7 +61,7 @@
               Reporte de Gráficas
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/graficaTecnico">Reporte de cantidad de Habitaciones Disponibles, Ocupadas y Limpieza</a></li>
             </ul>
           </li>
         </ul>
