@@ -42,6 +42,10 @@ public static function indextecnico(Router $router) {
     ]);
 }
 
+public static function indexempleados(Router $router){
+    $router->render('habitaciones/habitacionesempleados/index', []);
+}
+
     public  static function habitaciones()
     {
         
