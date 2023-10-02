@@ -43,11 +43,19 @@
               Habitaciones Del Hotel
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Reservar Habitaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/lista/estadistica">Calendario de Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
             </ul>
           </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reservaciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionescliente">Verificar Reservaciones</a></li>
+            <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
+            </ul>
+          </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -60,7 +68,7 @@
         </ul>
         </div>
     <div class="d-flex">
-      <a href="/examenfinalMRRF/menuAdministrador" class="btn btn-info me-2">Menu Principal</a>
+      <a href="/examenfinalMRRF/menuCliente" class="btn btn-info me-2">Menu Principal</a>
       <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar Sesión</a>
     </div>
   </div>

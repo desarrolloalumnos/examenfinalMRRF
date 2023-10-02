@@ -13,32 +13,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Usuarios Pendientes
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
-              <li><a class="dropdown-item" href="/examenfinalMRRF/activacion">Solicitud de Usuarios Pendientes</a></li>
-              <li><a class="dropdown-item" href="/examenfinalMRRF/lista">Lista de Usuarios Activos</a></li>
-            </ul>
-          </li>
+          
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Habitaciones Del Hotel
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
-            </ul>
-          </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reservaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/reservaciones">Administrar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionescliente">Buscar Reservaciones</a></li>
             <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
             </ul>
           </li>
@@ -54,12 +37,12 @@
         </ul>
         </div>
     <div class="d-flex">
-      <a href="/examenfinalMRRF/menuAdministrador" class="btn btn-info me-2">Menu Principal</a>
+      <a href="/examenfinalMRRF/menuCliente" class="btn btn-info me-2">Menu Principal</a>
       <a href="/examenfinalMRRF/logout" class="btn btn-danger">Cerrar Sesión</a>
     </div>
   </div>
 </nav>
-
+<br><br><br>
 <h1 class="text-center">Buscar Habitaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">

@@ -25,20 +25,10 @@
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Habitaciones Del Hotel
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesadmin">Administrar Habitaciones</a></li>
-            <li><a class="dropdown-item" href="/examenfinalMRRF/habitacionesclientes">Busqueda de Habitaciones</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="reportesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Reservaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
-            <li><a class="dropdown-item" href="/examenfinalMRRF/reservaciones">Administrar Reservaciones</a></li>
+            <li><a class="dropdown-item" href="/examenfinalMRRF/reservacionesadmin">Administrar Reservaciones</a></li>
             <!-- <li><a class="dropdown-item" href="/examenfinalMRRF/estadistica">Calendario de Reservaciones</a></li> -->
             </ul>
           </li>
@@ -59,8 +49,8 @@
     </div>
   </div>
 </nav>
-
-<h1 class="text-center">Formulario de Habitaciones</h1>
+<br><br><br>
+<h1 class="text-center">Administrador de Habitaciones</h1>
 <div class="row justify-content-center mb-5">
     <form class="col-lg-8 border bg-light p-3" id="formularioHabitaciones">
         <input type="hidden" name="habitacion_id" id="habitacion_id">
