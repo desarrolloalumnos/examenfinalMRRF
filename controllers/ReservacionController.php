@@ -30,13 +30,14 @@ class ReservacionController {
             'habitaciones' => $habitaciones,
         ]);
 }
+
 public static function indextecnico(Router $router) {
       
        
     $clientes = static::usuarios();
     $habitaciones = static::habitaciones();
 
-    $router->render('reservaciones/reservacionestecnico/index', [
+    $router->render('reservaciones/reservacionesempleados/index', [
         'clientes' => $clientes,
         'habitaciones' => $habitaciones,
     ]);

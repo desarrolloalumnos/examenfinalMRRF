@@ -32,6 +32,7 @@ $router->get('/habitacionesclientes', [HabitacionController::class,'indexcliente
 // reservaciones
 $router->get('/reservacionesadmin', [ReservacionController::class,'indexadmin']);
 $router->get('/reservacionescliente', [ReservacionController::class,'indexcliente']);
+$router->get('/reservacionesempleados', [ReservacionController::class,'indexempleados']);
 $router->get('/API/reservaciones/buscar', [ReservacionController::class,'buscarApi']);
 $router->post('/API/reservaciones/guardar', [ReservacionController::class,'guardarApi']);
 $router->post('/API/reservaciones/modificar', [ReservacionController::class,'modificarApi']);
