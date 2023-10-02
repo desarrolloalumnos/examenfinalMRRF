@@ -13,6 +13,9 @@ class HabitacionController {
     public static function indexclientes(Router $router){
         $router->render('habitaciones/habitacionesclientes/index', []);
     }
+    public static function indexempleados(Router $router){
+        $router->render('habitaciones/habitacionesempleados/index', []);
+    }
  
     // public static function indexreservaciones(Router $router){
     //     $router->render('reservaciones/index', []);
