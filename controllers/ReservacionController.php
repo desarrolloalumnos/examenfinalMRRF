@@ -30,13 +30,14 @@ class ReservacionController {
             'habitaciones' => $habitaciones,
         ]);
 }
+
 public static function indextecnico(Router $router) {
       
        
     $clientes = static::usuarios();
     $habitaciones = static::habitaciones();
 
-    $router->render('reservaciones/reservacionestecnico/index', [
+    $router->render('reservaciones/reservacionesempleados/index', [
         'clientes' => $clientes,
         'habitaciones' => $habitaciones,
     ]);
@@ -50,7 +51,7 @@ public static function indexempleados(Router $router){
     {
         
         
-        $sql = "SELECT * FROM habitaciones WHERE habitacion_situacion = 1 ";
+        $sql = "SELECT * FROM habitaciones WHERE habitacion_disponibilidad  = 1 ";
         
         
         
