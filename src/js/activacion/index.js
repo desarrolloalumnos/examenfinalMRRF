@@ -119,7 +119,7 @@ const activar = async e => {
 
     // Verificar si el usuario tiene un rol asignado antes de activar
     const rolNombre = button.dataset.rolNombre;
-    if (rolNombre === '' || rolNombre === null) {
+    if (rolNombre === 'PENDIENTE' || rolNombre === 'PENDIENTE') {
         Swal.fire({
             icon: 'warning',
             title: 'Rol no asignado',

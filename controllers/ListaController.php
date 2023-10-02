@@ -39,7 +39,6 @@ public static function buscarRoles(){
     //!Funcion Buscar
     public static function buscarAPI()
     {
-
         $sql = "SELECT u.usu_id, u.usu_nombre, u.usu_dpi, u.usu_password, u.usu_email, u.usu_telefono, r.rol_nombre
         FROM usuario u
         LEFT JOIN rol r ON u.usu_rol = r.rol_id
