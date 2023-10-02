@@ -10,6 +10,9 @@ const btnGuardar = document.getElementById('btnGuardar');
 const btnCancelar = document.getElementById('btnCancelar');
 const divTabla = document.getElementById('tablaClientes'); 
 
+
+btnBuscar.disabled = true;
+btnBuscar.parentElement.style.display = 'none';
 btnModificar.disabled = true;
 btnModificar.parentElement.style.display = 'none';
 btnCancelar.disabled = true;
@@ -316,7 +319,7 @@ const modificar = async (evento) => {
 buscar();
 
 btnGuardar.addEventListener('click', guardar);
-btnBuscar.addEventListener('click', buscar);
+
 datatable.on('click', '.btn-warning', traeDatos);
 datatable.on('click', '.btn-danger', eliminar);
 btnModificar.addEventListener('click', modificar)

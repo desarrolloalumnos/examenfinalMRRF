@@ -25,7 +25,7 @@ class ReservacionController {
     {
         
         
-        $sql = "SELECT * FROM habitaciones WHERE habitacion_situacion = 1 ";
+        $sql = "SELECT * FROM habitaciones WHERE habitacion_disponibilidad  = 1";
         
         
         
@@ -75,7 +75,9 @@ class ReservacionController {
             if (isset($_POST['reserva_fecha_fin'])) {
                 $_POST['reserva_fecha_fin'] = date('Y-m-d H:i', strtotime($_POST['reserva_fecha_fin']));
             }
-    
+            
+            
+            
             $reservacion = new Reservacion($_POST);
             // echo json_encode($_POST);
             // exit;
@@ -103,7 +105,7 @@ class ReservacionController {
     }
     
 
-   
+  
     public static function buscarApi()
     {
             $sql = "SELECT
@@ -147,8 +149,7 @@ class ReservacionController {
     
             $reservacion = new Reservacion($_POST);
             
-            echo json_encode($_POST);
-            exit;
+         
             $resultado = $reservacion->actualizar();
     
             if ($resultado['resultado'] == 1) {
