@@ -9,6 +9,7 @@ use Controllers\ReservacionController;
 use Controllers\LoginController;
 use Controllers\ActivacionController;
 use Controllers\ListaController;
+use Controllers\DisponibilidadController;
 
 
 $router = new Router();
