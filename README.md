@@ -1,3 +1,4 @@
 # BASE PARA PROYECTOS MVC
-Base para programacion MVC con php 
-Curso de ingenieria de software
+Terminamos las primeras 3 ramas.
+se agregaron los link al nav
+se ejecutaron los requerimientos

@@ -77,10 +77,12 @@ const datatable = new Datatable('#tablaHabitaciones', {
 })
 
 const buscar = async () => {
-
     let habitacion_numero = formulario.habitacion_numero.value;
     let habitacion_tipo = formulario.habitacion_tipo.value;
-    const url = `/examenfinalMRRF/API/habitacionesadmin/buscar?habitacion_numero=${habitacion_numero}&habitacion_tipo=${habitacion_tipo}`;
+    let habitacion_descripcion = formulario.habitacion_descripcion.value;
+    let precio_minimo = formulario.precio_minimo.value; // Asume que tienes un input con nombre "precio_minimo"
+    let precio_maximo = formulario.precio_maximo.value; // Asume que tienes un input con nombre "precio_maximo"
+    const url = `/examenfinalMRRF/API/habitacionesadmin/buscar?habitacion_numero=${habitacion_numero}&habitacion_tipo=${habitacion_tipo}&habitacion_descripcion=${habitacion_descripcion}${precio_minimo ? `&precio_minimo=${precio_minimo}` : ''}${precio_maximo ? `&precio_maximo=${precio_maximo}` : ''}`; 
     // const url = `/examenfinalMRRF/API/habitaciones/buscar`;
     
     const config = {
@@ -108,6 +110,7 @@ const buscar = async () => {
         console.log(error);
     }
 }
+
 const guardar = async (evento) => {
     evento.preventDefault();
     if (!validarFormulario(formulario, ['habitacion_id'])) {

@@ -83,13 +83,14 @@
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col">
-                <label for="habitacion_tarifa">Tarifa de la habitacion</label>
-                <input type="number" name="habitacion_tarifa" id="habitacion_tarifa" class="form-control" >
+        <div class="col">
+                <label for="precio_minimo">Buscar por precio mínimo</label>
+                <input type="number" name="precio_minimo" id="precio_minimo" class="form-control">
             </div>
             <div class="col">
-                <label for="habitacion_disponibilidad">Disponibilidad de la habitacion</label>
-                <input type="text" name="habitacion_disponibilidad" id="habitacion_disponibilidad" class="form-control">
+                <label for="precio_maximo">Buscar por precio maximo</label>
+                <input type="number" name="precio_maximo" id="precio_maximo" class="form-control">
+
             </div>
         </div>
         <div class="row mb-3">
